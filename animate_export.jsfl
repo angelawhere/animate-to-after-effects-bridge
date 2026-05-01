@@ -11,7 +11,7 @@
 // CONFIG
 // ============================================================
 var TEST_MODE = false;
-// Set true for a dry run — logs what would be exported without writing files
+// Set true for a dry run – logs what would be exported without writing files
 
 var USE_DEFAULT_FOLDER = false;
 var DEFAULT_FOLDER = "C:/users/you/documents/project/output/";
@@ -72,7 +72,7 @@ function main(docPath, outputFolder) {
     }
 
     // --------------------------------------------------------
-    // FIRST PASS — collect unique symbols from visible layers
+    // FIRST PASS – collect unique symbols from visible layers
     // --------------------------------------------------------
     var symbolMap = {};
     var warnings = [];
@@ -115,7 +115,7 @@ function main(docPath, outputFolder) {
     }
 
     // --------------------------------------------------------
-    // SECOND PASS — export drawn layers, record symbol instances
+    // SECOND PASS – export drawn layers, record symbol instances
     // --------------------------------------------------------
     var layersData = [];
     for (var i = 0; i < layers.length; i++) {
@@ -399,7 +399,7 @@ function exportLayer(doc, timeline, layer, layerIndex, versionFolder, fps, warni
                 var mat = ele.matrix;
 
                 if (Math.abs(ele.skewX - ele.skewY) < 1) {
-                    // equal skew — treated as rotation, no warning needed
+                    // equal skew – treated as rotation, no warning needed
                 } else if (ele.skewX * ele.skewY < 0) {
                     layerWarnings.push("Frame " + f + ": symbol '" + symName + "' has opposite-sign skew (skewX=" + Math.round(ele.skewX * 10) / 10 + ", skewY=" + Math.round(ele.skewY * 10) / 10 + ") – cannot be reproduced in AE, skew ignored.");
                 } else {
@@ -480,7 +480,7 @@ function getFrameType(frame) {
         }
     }
 
-    if (hasShape && hasSymbol) return "mixed";  // drawing + symbol — flatten
+    if (hasShape && hasSymbol) return "mixed";  // drawing + symbol – flatten
     if (hasSymbol) return "symbol";             // one or more symbols
     return "shape";
 }
@@ -541,7 +541,7 @@ if (!Object.keys) {
 }
 
 // ============================================================
-// RUN — only auto-runs when not called from render_queue.jsfl
+// RUN – only auto-runs when not called from render_queue.jsfl
 // ============================================================
 if (typeof RENDER_QUEUE_MODE === "undefined" || !RENDER_QUEUE_MODE) {
     fl.outputPanel.clear();
