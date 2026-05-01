@@ -8,7 +8,7 @@ A two-script pipeline for exporting hand-drawn animation from Adobe Animate into
 
 - **`animate_export.jsfl`** – run inside Adobe Animate. Exports PNG sequences and a scene JSON for all visible layers and symbols.
 - **`ae_import.jsx`** – run inside Adobe After Effects. Reads the exported data and builds symbol comps and a master comp with Time Remap.
-- **`render_queue.jsfl`** – optional. Batch exports multiple FLA files overnight using `animate_export.jsfl`.
+- **`render_queue.jsfl`** – optional. Batch exports multiple FLA files using `animate_export.jsfl`.
 
 ---
 
