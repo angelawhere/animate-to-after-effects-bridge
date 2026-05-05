@@ -30,7 +30,7 @@ function main(docPath, outputFolder) {
     if (!doc) { log("ERROR: No document open."); return; }
 
     // Exit any symbol edit modes back to main timeline
-    while (doc.getTimeline() !== doc.getTimeline(0)) {
+    while (!doc.getTimeline().name.match(/^Scene \d+$/)) {
         doc.exitEditMode();
     }
 
