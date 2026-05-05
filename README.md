@@ -170,6 +170,6 @@ Warnings are printed to Animate's Output panel at the end of each export:
 
 **Path errors on import** – make sure the output folder hasn't been moved or renamed since export. The JSON stores absolute paths. Also check you're selecting the right folder: the export script asks for an output root, while the import script asks for the scene folder inside it (e.g. output/c114_col04/, not output/).
 
-**Script runs from inside a symbol** – always export from the main timeline. Make sure you're not inside a symbol edit mode before running.
+**Script runs from inside a symbol** – always export from the main timeline. The script exits any open symbol edit modes automatically, but it's good practice to return to the main timeline before running.
 
 **Re-import creates duplicate comps** – expected behaviour. Each import run creates new items labelled `(2)`, `(3)` etc. Copy layers from the new comp into your working comp as needed.
